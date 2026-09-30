@@ -1,0 +1,76 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script language="javascript">
+            function day_title(day_name)
+            {
+                document.write("<td align=center width=30 bgcolor=green><b>"+day_name+"</b></td>");
+            }
+
+            function fill_table(month, month_len, start_day)
+            {
+                var day=1;
+
+                document.write("<table border=1 cellspacing=2 cellpadding=3%>");
+                document.write("<tr><td colspan=7 align=center bgcolor=yellow><b>"+month+" "+year+"</b></td></tr>");
+                document.write("<tr>");
+
+                day_title("SUN");
+                day_title("MON");
+                day_title("TUE");
+                day_title("WED");
+                day_title("THU");
+                day_title("FRI");
+                day_title("SAT");
+
+                document.write("</tr><tr>");
+
+                for(var i=0;i<start_day;i++)
+                {
+                    document.write("<td></td>");
+                }
+
+                for(var i=start_day;i<7 && day<=month_len;i++)
+                {
+                    document.write("<td align=center bgcolor=orange>"+day+"</td>");
+                    day++;
+                }
+
+                document.write("</tr>");
+
+                while(day<=month_len)
+                {
+                    document.write("<tr>");
+
+                    for(var i=1;i<=7 && day<=month_len;i++)
+                    {
+                        document.write("<td align=center bgcolor=orange>"+day+"</td>");
+                        day++;
+                    }
+
+                    document.write("</tr>");
+                }
+
+                document.write("</table><br>");
+            }
+
+            year=prompt("enter the year",2020);
+
+            var months=["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+            var month_lengths=[31,28,31,30,31,30,31,31,30,31,30,31];
+
+            if((year%4==0 && year%100!=0) || year%400==0)
+            {
+                month_lengths[1]=29;
+            }
+
+            for(var month=0;month<12;month++)
+            {
+                var start_day=new Date(year,month,1).getDay();
+                fill_table(months[month],month_lengths[month],start_day);
+            }
+        </script>
+    </body>
+</html>
