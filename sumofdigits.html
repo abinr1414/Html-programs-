@@ -1,0 +1,26 @@
+<html>
+    <title>
+        TO FIND THE SUM OF DIGITS
+    </title>
+    <body>
+        <h2>Find sum of digits</h2>
+        <label>Enter a number:</label>
+        <input type="number" id="num">
+        <button onclick="sumOfDigits()">Calculate</button>
+        <p id="result"></p>
+        <script>
+            function sumOfDigits(){
+                let num=document.getElementById("num").value;
+                let sum=0;
+                while (num>0){
+                    sum=sum+(num%10);
+                    num=Math.floor(num/10);
+
+                }
+                document.getElementById("result").innerHTML="sum of dgits="+sum;
+
+            }
+
+        </script>
+    </body>
+</html>
