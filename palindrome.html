@@ -1,0 +1,35 @@
+<html>
+    <title>
+        TO FIND THE PALINDROME OR NOT 
+    </title>
+    <body>
+        <h2>Find palindrome of a number</h2>
+        <label>Enter a number:</label>
+        <input type="number" id="num">
+        <button onclick="palindrome()">FIND</button>
+        <p id="result"></p>
+        <script>
+            function palindrome(){
+                let num = Number(document.getElementById("num").value);
+                let rev=0;
+                let temp=num;
+                while (num>0){
+                    let digit=num%10;
+                    rev=rev*10+digit;
+                    num=Math.floor(num/10);
+
+                }
+                if (temp==rev)
+                {
+                document.getElementById("result").innerHTML="Palindrome="+temp;
+                }
+                else{
+                    document.getElementById("result").innerHTML="not Palindrome="+temp;
+                }
+            }
+
+           
+
+        </script>
+    </body>
+</html>
