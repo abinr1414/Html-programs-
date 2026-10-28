@@ -1,0 +1,52 @@
+<html>
+    <body>
+        <h1>
+            WELCOME TO ONLINE EXAM
+
+        </h1>
+        <form onsubmit="return formCheck()">
+        <label>1.WHICH IS PLATFROM INDEPENDENT LANGUAGE</label><br>
+        <input type="radio" name="one" >C++
+        <input type="radio" name="one" >C
+        <input type="radio" name="one" >Python<br>
+        <label>WHICH IS LARGEST ANIMAL IN LAND</label><br>
+        <input type="radio" name="two" >TIGER
+        <input type="radio" name="two" >GIRAFFE
+        <input type="radio" name="two" >ELEPHANT<br>
+        <label>WHICH IS THE LARGEST ANIMAL IN WATER</label><br>
+        <input type="radio" name="three" >SHARK
+        <input type="radio" name="three" >BLUE WHALE
+        <input type="radio" name="three" >GUPPY<br>
+
+
+        <input type="submit" value ="submit">
+        <input type="reset" value ="reset"></form>
+
+        
+        <script>
+            function formCheck()
+            {
+
+                let mark=0;
+                 let form = document.forms[0];
+
+                if (form.one[2].checked){
+                    mark=mark+10;
+                }
+                
+                if (form.two[2].checked){
+                    mark=mark+10;
+                }
+                if (form.three[1].checked){
+                    mark=mark+10;
+                }
+
+                alert("MARK="+mark);
+                
+            }
+        </script>
+
+
+        
+    </body>
+</html>

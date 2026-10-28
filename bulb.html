@@ -1,0 +1,34 @@
+<html>
+    <head>
+          <style>
+            h1{
+                text-align: center;
+            }
+            div{
+               align-items: center;
+            }          
+            </style>
+    </head>
+    <body>
+       
+        <h1>CONTROL THE BULB</h1>
+        <div>
+        <label>TURN ON</label>
+        <button type="button" onclick="turnOn()" id="onbulb">ON</button>
+        <label>TURN OFF</label>
+        <button class ="button" onclick="turnOff()" id="offbulb">OFF</button>
+        <p id="status">BULB IS OFF🌚</p>
+        </div>
+
+         <script>
+            function turnOn()
+            {
+                 document.getElementById("status").innerHTML="BULB IS ON 🌞";
+            }
+            function turnOff()
+            {
+                 document.getElementById("status").innerHTML="BULB IS OFF 🌚";
+            }
+        </script>
+    </body>
+</html>
